@@ -3,23 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Coffee!</h1>
+<div class="container-fluid">
+<h1 class="text-center">Coffee!</h1>
+<hr>
+    <div class="row">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
 
 <form autocomplete="off">
-    <div class="autocomplete">
-        <input type="text" id="myInput">
-    </div>
-    <label for="roast-selection"></label>
-    <select id="roast-selection">
+
+    <label for="roast-selection"><h5>Roast</h5></label>
+    <select id="roast-selection" class="form-control form-control-md">
         <option>light</option>
         <option>medium</option>
         <option>dark</option>
     </select>
-    <input id="submit" type="submit" />
+    <div class="form-group">
+        <label for="myInput"><h5>Coffee Name</h5></label>
+            <input type="text" class="form-control" id="myInput">
+    </div>
+
+
+    <input id="submit" type="submit" class="col-lg-12 btn-primary">
 </form>
+            <hr>
+            <h2 class="text-center">Add a Coffee</h2>
+
+
+            <form autocomplete="off">
+
+                <label for="roast-selection2"><h5>Roast</h5></label>
+                <select id="roast-selection2" class="form-control form-control-md">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+                <div class="form-group">
+                    <label for="myInput"><h5>Coffee Name</h5></label>
+                    <input type="text" class="form-control" id="myInput2">
+                </div>
+
+
+                <input id="submit" type="submit" class="col-lg-12 btn-primary">
+            </form>
 
 <table>
     <thead>
@@ -31,7 +61,21 @@
     </thead>
     <tbody id="coffees"></tbody>
 </table>
+        </div>
+    </div>
 
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
 </html>

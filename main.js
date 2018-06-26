@@ -111,6 +111,7 @@ function autocomplete(inp, arr) {
 }
 
 autocomplete(document.getElementById("myInput"), coffeeNames);
+autocomplete(document.getElementById("myInput2"), coffeeNames);
 
 
 
