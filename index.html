@@ -10,6 +10,8 @@
 <div class="container-fluid">
 <h1 class="text-center">Coffee!</h1>
 <hr>
+    <div id="demo"></div>
+        <div class ="col-lg-6"></div>
     <div class="row">
         <div class="col-lg-6"></div>
         <div class="col-lg-6">
@@ -24,8 +26,9 @@
     </select>
     <div class="form-group">
         <label for="myInput"><h5>Coffee Name</h5></label>
-            <input type="text" class="form-control" id="myInput">
+            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()">
     </div>
+
 
 
     <input id="submit" type="submit" class="col-lg-12 btn-primary">
@@ -50,7 +53,7 @@
 
                 <input id="submit" type="submit" class="col-lg-12 btn-primary">
             </form>
-<div class="d-none">
+<div>
 <table>
     <thead>
     <tr>
