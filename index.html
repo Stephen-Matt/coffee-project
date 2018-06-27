@@ -10,8 +10,6 @@
 <div class="container-fluid">
     <h1 class="text-center">Coffee!</h1>
     <hr>
-    <div id="demo"></div>
-    <div class ="col-lg-6"></div>
     <div class="row">
         <div class="col-lg-6" id="bodyText"></div>
         <div class="col-lg-6">
@@ -20,19 +18,19 @@
 
                 <label for="roast-selection"><h5>Roast</h5></label>
                 <select id="roast-selection" class="form-control form-control-md">
-                    <option>ALL</option>
+                    <option selected="selected">all</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
                 <div class="form-group">
                     <label for="myInput"><h5>Coffee Name</h5></label>
-                    <input type="text" class="form-control" id="myInput" onkeypress="myKeyPress(event)">
+                    <input type="text" class="form-control" id="myInput" value="">
                 </div>
 
 
 
-                <input id="submit" type="submit" class="col-lg-12 btn-primary">
+                <input id="submit" type="submit" class="col-lg-12 btn-primary" disabled>
             </form>
             <hr>
             <h2 class="text-center">Add a Coffee</h2>
@@ -59,11 +57,9 @@
                     <thead>
                     <tr>
                         <!--<th>ID</th>-->
-                        <th>NAME</th>
-                        <th>ROAST</th>
                     </tr>
                     </thead>
-                    <tbody id="coffees"></tbody>
+                    <tbody id="coffees" class="d-none"></tbody>
                 </table>
             </div>
         </div>
