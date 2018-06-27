@@ -24,28 +24,34 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
-    filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        } else if(selectedRoast === "all") {
-            filteredCoffees.push(coffee);
-        }
-    });
-    bodyText.innerHTML = renderCoffees(filteredCoffees);
-}
-
-function updateCoffees2(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedName = nameSelections.value;
     filteredCoffees = [];
     coffees.forEach(function(coffee) {
+        if (coffee.roast === "light") {
+            filteredCoffees.push(coffee);
+        }
         if (coffee.name.charAt(0).toLowerCase() === selectedName.charAt(0).toLowerCase()) {
             filteredCoffees.push(coffee);
         }
+        // } else if(selectedRoast === "all") {
+        //     filteredCoffees.push(coffee);
+        // }
+
     });
     bodyText.innerHTML = renderCoffees(filteredCoffees);
 }
+//
+// function updateCoffees2(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedName = nameSelections.value;
+//     filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name.charAt(0).toLowerCase() === selectedName.charAt(0).toLowerCase()) {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     bodyText.innerHTML = renderCoffees(filteredCoffees);
+// }
 
 
 
@@ -94,8 +100,8 @@ bodyText.innerHTML = renderCoffees(coffees);
 
 
 
-roastSelection.addEventListener("change", updateCoffees);
-nameSelections.addEventListener("input", updateCoffees2);
+roastSelection.addEventListener("input", updateCoffees);
+nameSelections.addEventListener("input", updateCoffees);
 
 
 
