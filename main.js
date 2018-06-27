@@ -44,7 +44,7 @@ function updateCoffees2(e) {
     var selectedName = nameSelections.value;
     filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.name.charAt(0).toLowerCase() === selectedName.charAt(0).toLowerCase()) {
+        if (coffee.name.toLowerCase().includes(selectedName.toLowerCase())) {
             filteredCoffees.push(coffee);
         } else if (selectedName === "") {
             filteredCoffees.push(coffee);
@@ -54,17 +54,25 @@ function updateCoffees2(e) {
     bodyText.innerHTML = renderCoffees(filteredCoffees);
 }
 
-function addCoffee() {
-    var customCoffee = {};
-    customCoffee.name = input2.value;
-    customCoffee.roast = roastSelection2.value;
-    filteredCoffees.push(addCoffee);
-
-
-
-
-    bodyText.innerHTML = renderCoffees(filteredCoffees);
-
+// function addCoffee(id, name, roast) {
+//     var customCoffee = {};
+//     customCoffee.id = coffees.length + 1;
+//     customCoffee.name = input2.value;
+//     customCoffee.roast = roastSelection2.value;
+//     coffees.push(addCoffee);
+//
+//
+//
+//
+//     bodyText.innerHTML = renderCoffees(filteredCoffees);
+//
+// }
+function creatCoffee(id, name, roast) {
+    var name  = coffee.split(" ");
+    return {id: coffees.id.length + 1, author: {
+            firstName: name[0],
+            lastName: name[1]
+        }}
 }
 
 
@@ -84,7 +92,13 @@ var coffees = [
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
+    createCoffee("1", "Light City", "light"),
+    createBook("Code Complete", "Steve McConnell"),
+    createBook("Clean Code", "Robert Martin"),
+    createBook("Learn Java in One Day and Learn It Well", "Jamie Chan"),
+    createBook("Coding for Beginners", "Kotiyana ")
 ];
+
 
 var bodyText = document.getElementById("bodyText");
 
