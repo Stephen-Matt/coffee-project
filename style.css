@@ -14,4 +14,30 @@ td, th {
     display: inline-block;
 }
 
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.autocomplete {
+    width: 300px;
+    position: relative;
+    display: inline-block;
+}
+
+body {
+    color: black;
+}
+
+
+
+#header {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 
