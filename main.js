@@ -28,19 +28,21 @@ function updateCoffees(e) {
         }
     });
     bodyText.innerHTML = renderCoffees(filteredCoffees);
+    bodyText.innerTextHTML = renderCoffees(coffees);
 }
 
-function updateCoffees2(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedName = nameSelections.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.name.toLowerCase() === selectedName.toLowerCase()) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    bodyText.innerHTML = renderCoffees(filteredCoffees);
-}
+
+// function updateCoffees2(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedName = nameSelections.value;
+//     var filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name.toLowerCase() === selectedName.toLowerCase()) {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     bodyText.innerHTML = renderCoffees(filteredCoffees);
+// }
 
 
 
@@ -69,6 +71,18 @@ var coffeeNames = [];
 
 for (var i = 0; i < coffees.length; i++) {
     coffeeNames.push(coffees[i].name);
+}
+
+function myKeyPress(e){
+    var keynum;
+
+    if(window.event) { // IE
+        keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera
+        keynum = e.which;
+    }
+
+    document.getElementById("demo").innerHTML = String.fromCharCode(keynum);
 }
 
 
@@ -140,12 +154,12 @@ for (var i = 0; i < coffees.length; i++) {
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var nameSelections = document.getElementById("myInput");
+// var nameSelections = document.getElementById("myInput");
 
-tbody.innerHTML = renderCoffees(coffees);
+ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
-submitButton.addEventListener('click', updateCoffees2);
+
 
 
 
